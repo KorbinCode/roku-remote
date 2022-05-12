@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roku Remote</title>
+    <script src="https://kit.fontawesome.com/ac3a5b57cd.js" crossorigin="anonymous"></script>
+    <script language="javascript" type="text/javascript">
+        //ip = prompt("Please enter the IP Address of the Roku device you want to access. (Example: 192.168.12.34")
+        //ip = "192.168.7.69"
+        function rokubutton(actionName) {
+            let url = 'http://' + ip + ':8060/keypress/' + actionName;
+            return fetch(url, {method: 'POST', mode: 'no-cors'});
+        }
+        async function rokuinputstringliteral(str) {
+            for (var i = 0; i < str.length; i++) {await rokubutton('lit_'+ encodeURIComponent(str.charAt(i)))}
+        }
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+            });
+        ip = params.ip
+</script>
+    <style>
+    div {
+    font-size: 0;
+    background-color:hsl(0,0%,0%);
+}
+.button {
+    width: 40px;
+    height: 40px;
+    background-color:hsl(0,0%,12.5%);
+    
+    color: white;
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+}
+.tbt {
+    width: 60px;
+}
+.button:hover {
+    width: 40px;
+    height: 40px;
+    background-color:hsl(0,0%,25%);
+    
+    color: white;
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+}
+.tbt:hover {
+    width: 60px;
+}
+.purple {
+    background-color:rgb(102, 45, 145);    
+}
+.purple:hover {
+    background-color:rgb(166, 108, 209);
+}
+.power {
+    background-color:tomato;
+    border-radius: 100%;
+}
+.power:hover {
+    background-color:hsl(9, 100%, 89%);
+    border-radius: 100%;
+    color:black
+}
+.half1 {
+    width: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    float: left;
+}
+.half2 {
+    width: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.half1:hover {
+    width: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    float: left;
+}
+.half2:hover {
+    width: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.tlnc {
+    border-top-left-radius: 0px;
+}
+.trnc {
+    border-top-right-radius: 0px;
+}
+.blnc {
+    border-bottom-left-radius: 0px;
+}
+.brnc {
+    border-bottom-right-radius: 0px;
+}
+.tlnc:hover {
+    border-top-left-radius: 0px;
+}
+.trnc:hover {
+    border-top-right-radius: 0px;
+}
+.blnc:hover {
+    border-bottom-left-radius: 0px;
+}
+.brnc:hover {
+    border-bottom-right-radius: 0px;
+}
+.lonewolf {
+    margin-left: 40px;
+}
+</style>
+  </head>
+  <body>
+  <div>
+    <button class="lonewolf power button" onclick="rokubutton('Power')"><i class="fa-solid fa-power-off"></i></button>
+    <br>
+    <button class="button tbt" onclick="rokubutton('Back')"><i class="fa-solid fa-left-long"></i></button>
+    <button class="button tbt" onclick="rokubutton('Home')"><i class="fa-solid fa-house"></i></button>
+    <br>
+    <button class="button" onclick="rokuinputstringliteral(prompt('Please insert text to type in'))"><i class="fa-solid fa-keyboard"></i></button>
+    <button class="purple button blnc brnc" onclick="rokubutton('Up')"><i class="fa-solid fa-angle-up"></i></button>
+    <button class="button" onclick="rokubutton('Enter')"><i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+    <br>
+    <button class="purple button trnc brnc" onclick="rokubutton('Left')"><i class="fa-solid fa-angle-left"></i></button>
+    <button class="purple button tlnc trnc blnc brnc" onclick="rokubutton('Select')"><i class="fa-solid">OK</i></button>
+    <button class="purple button tlnc blnc" onclick="rokubutton('Right')"><i class="fa-solid fa-angle-right"></i></button>
+    <br>
+    <button class="button half1" onclick="rokubutton('volumedown')"><i class="fa-solid fa-volume-low"></i></button>
+    <button class="button half2" onclick="rokubutton('volumeup')"><i class="fa-solid fa-volume-high"></i></button>
+    <button class="purple button tlnc trnc" onclick="rokubutton('Down')"><i class="fa-solid fa-angle-down"></i></button>
+    <button class="button" onclick="rokubutton('volumemute')"><i class="fa-solid fa-volume-xmark"></i></button>
+    <br>
+    <button class="button tbt" onclick="rokubutton('InstantReplay')"><i class="fa-solid fa-rotate-left"></i></button>
+    <button class="button tbt" onclick="rokubutton('Info')"><i class="fa-solid fa-asterisk"></i></button>
+    <br>
+    <button class="button" onclick="rokubutton('Rev')"><i class="fa-solid fa-backward"></i></button>
+    <button class="button" onclick="rokubutton('Play')"><i class="fa-solid fa-play"></i><i class="fa-solid fa-pause"></i></button>
+    <button class="button" onclick="rokubutton('Fwd')"><i class="fa-solid fa-forward"></i></button>
+    <br>
+    </div>
+  </body>
+</html>
