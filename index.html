@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-<iframe src="https://korbincode.github.io/roku-remote/rokuiframeremote.html" style="height:300px;width:140px;border:none;overflow:hidden;"></iframe>
-
+<iframe src="https://korbincode.github.io/roku-remote/rokuiframeremote.html" style="height:300px;width:140px;border:none;overflow:hidden;" id="remote"></iframe>
+<input type="text" id="ip" name="ip" required>
+<button onclick="document.getElementById('remote').src = document.getElementById('ip').value">Submit IP</button>
 </body>
 </html>
