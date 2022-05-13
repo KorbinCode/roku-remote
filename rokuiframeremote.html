@@ -3,6 +3,7 @@
 <head>
     <title>Roku Remote</title>
     <script src="https://kit.fontawesome.com/ac3a5b57cd.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
     <script language="javascript" type="text/javascript">
         //ip = prompt("Please enter the IP Address of the Roku device you want to access. (Example: 192.168.12.34")
         //ip = "192.168.7.69"
@@ -37,14 +38,7 @@
     width: 60px;
 }
 .button:hover {
-    width: 40px;
-    height: 40px;
     background-color:hsl(0,0%,25%);
-    
-    color: white;
-    border: none;
-    text-align: center;
-    border-radius: 10px;
 }
 .tbt:hover {
     width: 60px;
@@ -113,6 +107,11 @@
 .lonewolf {
     margin-left: 40px;
 }
+.channelbutton {
+    width: 80px;
+    background: url(error.webp);
+    background-size: 80px 40px;
+}
 </style>
   </head>
   <body>
@@ -121,7 +120,7 @@
     <button class="button tbt" onclick="rokubutton('Back')"><i class="fa-solid fa-left-long"></i></button>
     <button class="button tbt" onclick="rokubutton('Home')"><i class="fa-solid fa-house"></i></button>
     <br>
-    <button class="button" onclick="rokuinputstringliteral(prompt('Please insert text to type in'))"><i class="fa-solid fa-keyboard"></i></button>
+    <button class="button" onclick="rokuinputstringliteral(prompt('Please insert text you want to type in.'))"><i class="fa-solid fa-keyboard"></i></button>
     <button class="purple button blnc brnc" onclick="rokubutton('Up')"><i class="fa-solid fa-angle-up"></i></button>
     <button class="button" onclick="rokubutton('Enter')"><i class="fa-solid fa-arrow-right-to-bracket"></i></button>
     <br>
@@ -140,5 +139,6 @@
     <button class="button" onclick="rokubutton('Rev')"><i class="fa-solid fa-backward"></i></button>
     <button class="button" onclick="rokubutton('Play')"><i class="fa-solid fa-play"></i><i class="fa-solid fa-pause"></i></button>
     <button class="button" onclick="rokubutton('Fwd')"><i class="fa-solid fa-forward"></i></button>
+    <br>
   </body>
 </html>
