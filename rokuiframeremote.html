@@ -18,6 +18,13 @@
             get: (searchParams, prop) => searchParams.get(prop),
             });
         ip = params.ip
+        $('body').on('keypress', '$("body")', function(args) {
+    if (args.keyCode == 13) {
+        $('#ok').click();
+        return false;
+    }
+});
+
 </script>
     <style>
     html {
@@ -117,24 +124,24 @@
   <body>
     <button class="lonewolf power button" onclick="rokubutton('Power')"><i class="fa-solid fa-power-off"></i></button>
     <br>
-    <button class="button tbt" onclick="rokubutton('Back')"><i class="fa-solid fa-left-long"></i></button>
-    <button class="button tbt" onclick="rokubutton('Home')"><i class="fa-solid fa-house"></i></button>
+    <button class="button tbt" onclick="rokubutton('Back')" id="back"><i class="fa-solid fa-left-long"></i></button>
+    <button class="button tbt" onclick="rokubutton('Home')" id="home"><i class="fa-solid fa-house"></i></button>
     <br>
     <button class="button" onclick="rokuinputstringliteral(prompt('Please insert text you want to type in.'))"><i class="fa-solid fa-keyboard"></i></button>
-    <button class="purple button blnc brnc" onclick="rokubutton('Up')"><i class="fa-solid fa-angle-up"></i></button>
+    <button class="purple button blnc brnc" onclick="rokubutton('Up')" id="up"><i class="fa-solid fa-angle-up"></i></button>
     <button class="button" onclick="rokubutton('Enter')"><i class="fa-solid fa-arrow-right-to-bracket"></i></button>
     <br>
-    <button class="purple button trnc brnc" onclick="rokubutton('Left')"><i class="fa-solid fa-angle-left"></i></button>
-    <button class="purple button tlnc trnc blnc brnc" onclick="rokubutton('Select')"><i class="fa-solid">OK</i></button>
-    <button class="purple button tlnc blnc" onclick="rokubutton('Right')"><i class="fa-solid fa-angle-right"></i></button>
+    <button class="purple button trnc brnc" onclick="rokubutton('Left')" id="left"><i class="fa-solid fa-angle-left"></i></button>
+    <button class="purple button tlnc trnc blnc brnc" onclick="rokubutton('Select')" id="ok"><i class="fa-solid">OK</i></button>
+    <button class="purple button tlnc blnc" onclick="rokubutton('Right')" id="right"><i class="fa-solid fa-angle-right"></i></button>
     <br>
     <button class="button half1" onclick="rokubutton('volumedown')"><i class="fa-solid fa-volume-low"></i></button>
     <button class="button half2" onclick="rokubutton('volumeup')"><i class="fa-solid fa-volume-high"></i></button>
-    <button class="purple button tlnc trnc" onclick="rokubutton('Down')"><i class="fa-solid fa-angle-down"></i></button>
+    <button class="purple button tlnc trnc" onclick="rokubutton('Down')" id="down"><i class="fa-solid fa-angle-down"></i></button>
     <button class="button" onclick="rokubutton('volumemute')"><i class="fa-solid fa-volume-xmark"></i></button>
     <br>
     <button class="button tbt" onclick="rokubutton('InstantReplay')"><i class="fa-solid fa-rotate-left"></i></button>
-    <button class="button tbt" onclick="rokubutton('Info')"><i class="fa-solid fa-asterisk"></i></button>
+    <button class="button tbt" onclick="rokubutton('Info')" id="info"><i class="fa-solid fa-asterisk"></i></button>
     <br>
     <button class="button" onclick="rokubutton('Rev')"><i class="fa-solid fa-backward"></i></button>
     <button class="button" onclick="rokubutton('Play')"><i class="fa-solid fa-play"></i><i class="fa-solid fa-pause"></i></button>

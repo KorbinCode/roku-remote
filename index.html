@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Roku Controller 1.1</title>
+<title>Roku Controller 1.2</title>
         <script src="http://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script type="text/javascript">
         function rokugotochannel() {
@@ -24,7 +24,8 @@ $('#remote').ready(function(){
 <input type="text" id="ip" name="ip" required>
 <button onclick='document.location.href = "http://127.0.0.1:2008?ip=" + document.getElementById("ip").value'>Submit IP</button>
 <br>
-<iframe src="http://127.0.0.1:2008/rokuiframeremote.html" style="height:300px;width:140px;border:none;overflow:hidden;" id="remote"></iframe>
+<iframe src="http://127.0.0.1:2008/rokuiframeremote.html" style="height:300px;width:140px;border:none;overflow:hidden;border-radius:40px;" id="remote"></iframe>
+<br>
 <select name="Channel" id="channel-select" onchange="rokugotochannel()">
 <option value=undefined selected >Channels</option>
 <option value="593290">Discovery Plus</option>
@@ -36,6 +37,12 @@ $('#remote').ready(function(){
 <option value="593099">Peacock TV</option>
 <option value="13">Prime Video</option>
 <option value="837">YouTube</option>
+<option value="tvinput.hdmi1">HDMI Input 1</option>
+<option value="tvinput.hdmi2">HDMI Input 2</option>
+<option value="tvinput.hdmi3">HDMI Input 3</option>
+<option value="tvinput.hdmi4">HDMI Input 4</option>
+<option value="tvinput.dtv">Live TV</option>
+<option value="tvinput.cvbs">AV Input</option>
 </select>
 </body>
 </html>
